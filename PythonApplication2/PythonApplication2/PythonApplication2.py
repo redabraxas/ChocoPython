@@ -39,10 +39,16 @@ print(data)
 
 
 # in 다음에는 리스트가 들어감.
-for setps in range(4) :
-    print(guests[setps])
-    for i in range(setps) :
-        print('*')
+#for setps in range(4) :
+#  print(guests[setps])
+
+for steps in data :   
+    if isinstance(steps,list) :
+        for step in steps :
+            print(step)
+    else :
+         print(steps)
+
 
 
 for steps in data :
@@ -54,10 +60,18 @@ data.reverse()
 print(data)
 
 
-#즐거운 파이썬시간~~~
+#즐거운 파이썬시간~~~ 쏠팅을해요
 data3=[43,42,65,80,19,28,64,92,41,59,61,34,97,78]
 
 data3.sort()
 data3.reverse()
 
 print(data3[0:5])
+
+##팝팝 버블팝!!!
+
+data3.extend([50,60])
+print(data3)
+
+data3.append([50,60])
+print(data3)
