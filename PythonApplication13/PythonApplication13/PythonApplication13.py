@@ -189,7 +189,10 @@ def PointConverter(s):
 # 클래스 이름과 변환 함수 등록
 sqlite3.register_adapter(Point, PointAdapter)
 # SQL 구문에서 사용할 자료형 이름과 변환 함수 등록
-sqlite3.register_converter("point", PointConverter)p1 = Point(4,3)
+sqlite3.register_converter("point", PointConverter)
+
+
+p1 = Point(4,3)
 p2 = Point(3,4)
 
 con1 = sqlite3.connect(":memory:")
