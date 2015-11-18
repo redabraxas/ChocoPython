@@ -23,7 +23,9 @@ def login():
 # url로 들어오는 값을 변수처럼 사용 가능 
 @app.route('/profile/<username>')
 def get_profile(username):
-    return 'profile : ' + username@app.route('/profile2/', methods=['POST','GET'])
+    return 'profile : ' + username
+
+@app.route('/profile2/', methods=['POST','GET'])
 def profile(username=None):
     error=None
     if request.method == 'POST':
@@ -33,9 +35,16 @@ def profile(username=None):
             return add_profile(request.form)
     else:
         error = 'Invalide username or email'
-     return render_template('profile.html', error=error)@app.route('/message/<int:message_id>')
+ 
+    return render_template('profile.html', error=error)
+
+
+
+@app.route('/message/<int:message_id>')
 def get_message(message_id):
-    return 'message_id : %d' % message_id
+    return 'message_id : %d' % message_id
+
+
 if __name__=='__main__':
     #app.run()
 
