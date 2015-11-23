@@ -1,12 +1,16 @@
 ﻿from flask import Flask, url_for,render_template
-app = Flask(__name__)
+app = Flask(__name__)
 
 
-@app.route('/main/')@app.route('/main/<name>')def main(name=None):
+
+@app.route('/main/')
+@app.route('/main/<name>')
+def main(name=None):
     return render_template('main.html', name=name)
 
 @app.route('/hello/')
-@app.route('/hello/<name>')def hello(name=None):
+@app.route('/hello/<name>')
+def hello(name=None):
     return render_template('hello.html', name=name)
 
 @app.route('/hello2/')
@@ -28,4 +32,5 @@ def hello3():
 
 if __name__ == '__main__':
     app.debug=True
-    app.run(port=5000)
+    app.run(port=5000)
+
